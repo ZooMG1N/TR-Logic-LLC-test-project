@@ -1,0 +1,145 @@
+@import "colors";
+
+body {
+  font-family: "Arial", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+body *{
+  box-sizing: border-box;
+}
+
+span {
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  height: 1500px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #000;
+  background-color: $main-color;
+  margin-bottom: auto;
+  z-index: 5;
+
+  &-title {
+    margin: 10px;
+  }
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+  top: -170px;
+  max-width: 1024px;
+  height: 1000px;
+  background-color: $main-color;
+  margin-top: 40px;
+  z-index: 1;
+  overflow: hidden;
+
+  .page-description {
+    height: 100px;
+    border: 1px solid #000;
+    background-color: $main-color;
+    margin: 10px;
+
+    &-title {
+      padding: 30px 10px;
+      margin: 0;
+    }
+  }
+
+  &-title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    margin: 10px;
+    margin-top: 0;
+  }
+
+  .visible-block {
+    //position: relative;
+    //right: -100px;
+    align-self: flex-end;
+    width: 200px;
+    height: 500px;
+    border: 1px solid #000;
+    background-color: $visible-block-color;
+    margin: 10px;
+    margin-top: 0;
+
+    .visible-block-title {
+      margin: 10px;
+    }
+  }
+
+  .left-aside {
+    position: absolute;
+    left: -170%;
+    width: 300px;
+    height: 100%;
+    border: 1px dashed #000;
+    background-color: $aside-blocks-color;
+    transition: linear 0.4s;
+
+    &-title {
+      margin: 10px;
+    }
+  }
+
+  .right-aside {
+    position: absolute;
+    right: -170%;
+    width: 300px;
+    height: 100%;
+    border: 1px dashed #000;
+    background-color: $aside-blocks-color;
+    transition: linear 0.4s;
+
+    &-title {
+      margin: 10px;
+    }
+  }
+
+  .right-aside-show {
+    right: 0;
+    transition: linear 0.4s;
+  }
+
+  .left-aside-show {
+    left: 0;
+    transition: linear 0.4s;
+  }
+}
+
+.footer  {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #000;
+  background-color: $main-color;
+  margin-top: auto;
+
+  &-title {
+    margin: 5px;
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 40px;
+}
